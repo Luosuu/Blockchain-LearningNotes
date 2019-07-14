@@ -27,4 +27,42 @@ solidity文件由以下四个高级结构组成
 * 导入(import)
 * 合约/库/接口 - contract/library/interface
 
+其中solidity的注释是和C++是一样的，`\\`是单行注释，`\*   *\`是多行注释。
 
+它们整体看起来像是这个样子的
+
+```solidity
+pragma solidity 0.4.19;
+
+contarct a{
+    //***
+}
+library b{
+    //***
+}
+interface c{
+    //***
+}
+```
+
+### import语句
+
+帮助我们导入其他solidity文件，使得当前的solidity文件可以访问其中的代码。这有助于我们编写模块化的代码。如：
+
+```solidity
+import 'commonLibrary.sol';
+```
+
+### 预编译指令
+
+通常指solidity文件的第一行代码，其形式一般为
+
+```solidity
+pragma solidity <<version number>>;
+```
+
+注意是有分号作为结束的。
+
+在`pragma`指令的帮助下，你可以为你的代码选择合适的编译器。这是一种很好的习惯。
+
+其中版本号`^0.4.0`代表版本号为4的最新的版本。
