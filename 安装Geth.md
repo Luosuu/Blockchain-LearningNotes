@@ -31,4 +31,6 @@ cd go-ethereum
 make geth
 ```
 
+然后在最后的运行结果里你就可以知道你启动geth的路径，你可以把它加在你的环境变量里方便你使用。
+
 ## macOS

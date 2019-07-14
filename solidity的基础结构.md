@@ -1,4 +1,4 @@
-# solidity的简单入门
+# 对solidity的初步了解
 
 Solidity是针对以太坊的编程语言，受到C++，Python，JavaScript等语言的影响。它的设计目的就是为了在以太坊上运行。
 
