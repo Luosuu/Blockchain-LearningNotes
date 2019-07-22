@@ -34,7 +34,7 @@ solidity文件由以下四个高级结构组成
 ```solidity
 pragma solidity 0.4.19;
 
-contarct a{
+contract a{
     //***
 }
 library b{
