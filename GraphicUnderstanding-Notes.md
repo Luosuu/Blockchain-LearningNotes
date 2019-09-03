@@ -65,3 +65,59 @@ the proportion of developers is just 1% of total users.
 96% EOAs call sc no more than 5 times.
 
 
+## Construction
+
+### MFG 
+
+MFG = (V,E,w)
+
+V is a set of nodes
+
+E is a set of ordered pairs of nodes, where the order of an edge indicates the direction of transferred money.
+
+w is a function mapping edges to their weights.
+
+### CCG 
+
+CCG = (V,E)
+
+V is a set of nodes, same as MFG
+
+E is a set of ordered edges, in which $(V_i,V_j)$ which means $V_i$ created $V_j$.
+
+#### Properties of CCG
+
+A forest consisting of multiple tress.
+
+The root of each tree is an EOA, the other nodes of the tree are smart contracts directly or indirectly created by the root.
+
+Smart contracts obviously outnumber the EOAs which creat contracts.
+
+### CIG
+
+CIG = (V,E,w)
+
+w is a function which associates each edge with a weight, which is the total number of invokations along the edge by one or more transactions.
+
+### Insights
+
+sc not widely used
+
+not all users frequently ues Ethereum
+
+Users prefer to transferring money instead of using smart contracts
+
+indegree(入度)
+
+outdegree(出度)
+
+## Analysis
+
+global clustering coefficent(全局聚类系数) to evaluate the extent(程度) to which nodes in a graph tend to cluster together.
+
+Pearson coefficent(皮尔逊相关系数，统计学名词) to evaluate the correlation(相关度) between the indegree and the outdegree of nodes, compute the assortativity coefficent(相似性系数) to study the preference for nodes to attach to others, and evaluate node's importance using the PageRank algorithm.
+
+Exchange markets are the hub nodes(枢纽节点) connecting yo other nodes bidirectionally(双向), resulting in the huge SCC.
+
+*ReplaySafeSplit* is an important sc and used to prevent the attacks that replay transactions between the old chain and new forked chain.
+
