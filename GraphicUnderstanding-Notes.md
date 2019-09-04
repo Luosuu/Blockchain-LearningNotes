@@ -117,7 +117,35 @@ global clustering coefficent(全局聚类系数) to evaluate the extent(程度) 
 
 Pearson coefficent(皮尔逊相关系数，统计学名词) to evaluate the correlation(相关度) between the indegree and the outdegree of nodes, compute the assortativity coefficent(相似性系数) to study the preference for nodes to attach to others, and evaluate node's importance using the PageRank algorithm.
 
+皮尔逊相关系数，可以用于(x,y)的点集，度量x和y的相关程度。
+
 Exchange markets are the hub nodes(枢纽节点) connecting yo other nodes bidirectionally(双向), resulting in the huge SCC.
 
 *ReplaySafeSplit* is an important sc and used to prevent the attacks that replay transactions between the old chain and new forked chain.
+
+Attacks on Ethereum can be detected by inspecting the activities of contract creation.
+
+synchronization(同步)
+
+A small number of developers created lots of smart contracts.
+
+only 6% of contracts are *unique*
+
+## Attack forensics
+
+给定一个恶意智能合约，攻击取证一般尝试获得所有被攻击者控制的账号。
+
+我们需要在CCG和CIG间建立关系，来得到攻击者创造的所有智能合约和所有调用了这些智能合约的账户。
+
+先从CCG中计算出含有恶意智能合约的弱链接图，来得到所有被root（指攻击者）直接或间接创造的所有合约。
+
+对在弱链接图中的所有节点，我们从CIG中定位它的所有调用者。如果这个调用者是智能合约，那么就从CIG中继续回溯，直到找到EOA。
+
+最终弱链接图中的所有结点和所有调用（无论直接还是间接）这些节点的账户都被探知。
+
+## Anomaly detection
+
+一种直觉的办法是检测合约的大量被创造。然而exchange markets也会创造大量合约。
+
+于是可以添加附加条件，如果一个账号创建了大量合约并且很少被用于money transfer或者很少被调用，那么就认定它是异常账号。
 
